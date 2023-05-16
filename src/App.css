@@ -1,0 +1,38 @@
+.mainContainer {
+  width: 600px;
+  min-height: 500px;
+  border-radius: 14px;
+  margin: 10px auto;
+  background-color: white;
+  position: relative;
+}
+.todoBody {
+  width: 100%;
+}
+.todoContainer {
+  display: flex;
+  align-items: center;
+}
+.clearAllBtn {
+  margin: 5%;
+  width: 90%;
+  height: 30px;
+  background-color: rgb(255, 4, 4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 10px;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: white;
+}
+@media (max-width: 600px) {
+  .mainContainer {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .mainContainer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,24 @@
+.date {
+  position: absolute;
+  bottom: 10px;
+  left: 60%;
+}
+
+.t,
+.d {
+  font-size: 30px;
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+.d {
+  font-size: 20px;
+}
+@media (max-width: 860px) {
+  .t {
+    font-size: 25px;
+  }
+  .d {
+    font-size: 15px;
+  }
+}

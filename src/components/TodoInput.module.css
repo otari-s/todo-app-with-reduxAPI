@@ -1,0 +1,37 @@
+.formContainer {
+  width: 100%;
+  margin: 10px 0 0;
+}
+.todoForm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todoInput {
+  width: 60%;
+  height: 40px;
+  outline: none;
+  font-size: 25px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0 10px;
+}
+.todoBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: white;
+}
+.addBtn {
+  width: 40px;
+  height: 40px;
+  color: #17664e;
+}
+.addBtn:hover {
+  cursor: pointer;
+  color: #104132;
+}

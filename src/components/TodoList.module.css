@@ -1,0 +1,71 @@
+.todoList {
+  width: 90%;
+  min-height: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 20px auto;
+  border-top: 1px solid #0d1b2a;
+  border-left: 1px solid #0d1b2a;
+}
+.todoListButtons {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.todoListInfo {
+  width: 60%;
+
+  overflow: visible;
+  word-break: break-all;
+}
+.todoListBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: white;
+}
+.delBtn {
+  width: 30px;
+  height: 30px;
+  color: hsl(0, 100%, 50%);
+}
+.delBtn:hover {
+  cursor: pointer;
+  color: rgb(212, 3, 3);
+}
+.checkBtn {
+  width: 30px;
+  height: 30px;
+  color: rgb(6, 201, 6);
+}
+.checkBtn:hover {
+  cursor: pointer;
+  color: rgb(2, 177, 2);
+}
+.tododLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.tododLinkButton {
+  border: none;
+  background-color: white;
+  font-size: 15px;
+  height: 25px;
+  border-bottom: 1px solid black;
+}
+.tododLinkButton:hover {
+  cursor: pointer;
+  border-color: #1e3e61;
+  color: #214770;
+}
