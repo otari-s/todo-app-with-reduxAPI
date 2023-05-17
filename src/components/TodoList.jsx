@@ -17,7 +17,7 @@ function TodoList() {
             navigate("/complete");
           }}
         >
-          Completed Todos
+          Completed Todos Page
         </button>
       </div>
       {todos

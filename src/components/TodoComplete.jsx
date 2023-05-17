@@ -19,7 +19,7 @@ function TodoComplete() {
             navigate("/");
           }}
         >
-          Todos
+          New Todos Page
         </button>
       </div>
       {todos
