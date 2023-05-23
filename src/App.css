@@ -36,3 +36,25 @@
     width: 100%;
   }
 }
+
+.alert {
+  position: absolute;
+  top: 10px;
+  left: 9%;
+  text-align: center;
+  min-width: 80%;
+  color: white;
+  opacity: 0.9;
+  font-weight: bold;
+  display: none;
+  z-index: 99999;
+}
+.success {
+  background-color: green;
+}
+.error {
+  background-color: red;
+}
+.info {
+  background-color: rgb(3, 138, 216);
+}

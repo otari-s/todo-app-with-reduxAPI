@@ -3,6 +3,7 @@ import { MdLibraryAdd } from "react-icons/md";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../store/todo-slice";
+import { showNotification } from "../store/notification-slice";
 import { v4 as uuidv4 } from "uuid";
 
 function TodoInput() {
@@ -19,6 +20,13 @@ function TodoInput() {
     };
     dispatch(addTodo(payload));
     setValue("");
+    dispatch(
+      showNotification({
+        type: "success",
+        message: "todo created",
+        duration: 3,
+      })
+    );
   }
 
   return (

@@ -3,6 +3,7 @@ import { MdDeleteForever, MdCancel } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearItem, completeTodo, clearAll } from "../store/todo-slice";
+import { showNotification } from "../store/notification-slice";
 
 function TodoComplete() {
   const navigate = useNavigate();
@@ -29,8 +30,8 @@ function TodoComplete() {
           return (
             <div className={styles.todoList} key={todo.id}>
               <div className={styles.todoListInfo}>
-                <p>{todo.name}</p>
-                <p>{todo.date}</p>
+                <p style={{ fontSize: "25px", marginBottom: "10px" }}>{name}</p>
+                <p style={{ color: "#6a040f" }}>{date}</p>
               </div>
 
               <div className={styles.todoListButtons}>
@@ -38,6 +39,13 @@ function TodoComplete() {
                   className={styles.todoListBtn}
                   onClick={() => {
                     dispatch(completeTodo({ id, completed: false }));
+                    dispatch(
+                      showNotification({
+                        type: "info",
+                        message: "not  completed",
+                        duration: 3,
+                      })
+                    );
                   }}
                 >
                   <MdCancel className={styles.checkBtn} />
@@ -46,6 +54,13 @@ function TodoComplete() {
                   className={styles.todoListBtn}
                   onClick={() => {
                     dispatch(clearItem(id));
+                    dispatch(
+                      showNotification({
+                        type: "error",
+                        message: "todo deleted",
+                        duration: 3,
+                      })
+                    );
                   }}
                 >
                   <MdDeleteForever className={styles.delBtn} />
@@ -59,6 +74,13 @@ function TodoComplete() {
         className="clearAllBtn"
         onClick={() => {
           dispatch(clearAll({ completed: true }));
+          dispatch(
+            showNotification({
+              type: "error",
+              message: "all todos deleted",
+              duration: 3,
+            })
+          );
         }}
       >
         Clear All

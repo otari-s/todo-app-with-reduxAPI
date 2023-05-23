@@ -3,6 +3,8 @@ import { MdDeleteForever, MdCheckBox } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAll, clearItem, completeTodo } from "../store/todo-slice";
 import { useNavigate } from "react-router-dom";
+import { showNotification } from "../store/notification-slice";
+
 function TodoList() {
   const navigate = useNavigate();
 
@@ -36,6 +38,13 @@ function TodoList() {
                   className={styles.todoListBtn}
                   onClick={() => {
                     dispatch(completeTodo({ id, completed: true }));
+                    dispatch(
+                      showNotification({
+                        type: "info",
+                        message: "todo completed",
+                        duration: 3,
+                      })
+                    );
                   }}
                 >
                   <MdCheckBox className={styles.checkBtn} />
@@ -44,6 +53,13 @@ function TodoList() {
                   className={styles.todoListBtn}
                   onClick={() => {
                     dispatch(clearItem(id));
+                    dispatch(
+                      showNotification({
+                        type: "error",
+                        message: "todo deleted",
+                        duration: 3,
+                      })
+                    );
                   }}
                 >
                   <MdDeleteForever className={styles.delBtn} />
@@ -57,6 +73,13 @@ function TodoList() {
         className="clearAllBtn"
         onClick={() => {
           dispatch(clearAll({ completed: false }));
+          dispatch(
+            showNotification({
+              type: "error",
+              message: "deleted all todos",
+              duration: 3,
+            })
+          );
         }}
       >
         Clear All
